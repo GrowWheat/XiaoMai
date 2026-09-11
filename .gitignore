@@ -1,29 +1,29 @@
-# build output
+# 构建输出
 dist/
 
-# content repository working copy, provenance, and safe cleanup backups
+# 内容仓库工作副本、溯源和安全清理备份
 .content-src/
 .content-backup/
 content.lock.json
 XiaoMai-Content/
 
-# generated types
+# 生成的类型
 .astro/
 
-# dependencies
+# 依赖
 node_modules/
 
-# logs
+# 日志
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 
-# environment variables
+# 环境变量
 .env
 .env.production
 
-# macOS-specific files
+# macOS 系统文件
 .DS_Store
 
 .vercel
@@ -32,40 +32,40 @@ package-lock.json
 bun.lockb
 yarn.lock
 
-# ide
+# IDE
 .idea
 
-# generated font subsets
+# 生成的字体子集
 src/assets/fonts/.subset/
 
-# generated local icon collection
+# 生成的本地图标集合
 src/generated/local-icon-collections.ts
 *.iml
 
-# anime snapshot data & downloaded covers
+# 动漫快照数据和下载的封面
 src/data/anime-snapshots/*.json
 public/assets/anime/covers/*
 !public/assets/anime/covers/.gitkeep
 
-# generated responsive moment thumbnails
+# 生成的响应式精彩时刻缩略图
 public/assets/moments/thumbnails/*
 !public/assets/moments/thumbnails/.gitkeep
 
-# local tooling artifacts
+# 本地工具产物
 .zcode/
 .codex-*.log
 research/
 
-# playwright
+# Playwright 测试
 .playwright-cli/
 test-results/
 playwright-report/
 tests/site/visual.spec.ts-snapshots/
 
-# Lighthouse local reports
+# Lighthouse 本地报告
 artifacts/lighthouse/*
 !artifacts/lighthouse/.gitkeep
 .lighthouseci/
 
-# generated AI skills plugin packages
+# 生成的 AI 技能插件包
 artifacts/xiaomai-ai-*
