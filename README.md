@@ -4,11 +4,14 @@
 
 XiaoMai（中文名「小麦」）是一套现代静态博客主题：以 Material 3 Expressive 设计语言统一视觉，配合 Svelte 5 的细粒度交互、Swup 的无刷新页面转场，以及一套开箱即用的 Markdown 写作增强（提示块、Mermaid、KaTeX、代码块、视频、灯箱、加密文章等）。主题采用「代码仓 / 内容仓」双仓分离的架构，便于协作与备份。
 
-- 当前版本：`1.0.0`
-- 许可证：[MIT](./LICENSE)
-- 技术栈：Astro `7.2.6` · Svelte `5.56.8` · Tailwind CSS 4 · Stylus · Material 3 Expressive
-- 作者（维护者）：**GrowWheat**
-- 仓库：`https://github.com/GrowWheat/XiaoMai`
+![Node.js >= 22.12](https://img.shields.io/badge/Node.js-%3E%3D22.12-5FA04E?logo=nodedotjs&logoColor=white)
+![pnpm 9](https://img.shields.io/badge/pnpm-9-F69220?logo=pnpm&logoColor=white)
+![Astro 7](https://img.shields.io/badge/Astro-7-BC52EE?logo=astro&logoColor=white)
+[![License: MIT](https://img.shields.io/badge/License-MIT-3DA639.svg)](./LICENSE)
+
+</div>
+
+> 
 
 ---
 
