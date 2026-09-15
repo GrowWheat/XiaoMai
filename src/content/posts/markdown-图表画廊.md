@@ -1,6 +1,6 @@
 ---
 title: "Mermaid 图表画廊"
-published: 2026-05-02
+published: 2026-09-02
 description: "汇集 Mermaid 图表，涵盖流程、交互、数据模型、排期与项目历程的示例画廊。"
 tags: [演示, 示例, Markdown, Mermaid]
 category: 示例
