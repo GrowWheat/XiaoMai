@@ -1,0 +1,4 @@
+interface:
+  display_name: "XiaoMai Content Configuration"
+  short_description: "Configure content sources and YAML overlays for XiaoMai."
+  default_prompt: "Use $xiaomai-content-config to configure my XiaoMai content repository and validate its YAML overlays."
