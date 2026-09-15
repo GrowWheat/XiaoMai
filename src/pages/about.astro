@@ -1,0 +1,195 @@
+---
+import { Icon } from "astro-icon/components";
+import { resolveAsset } from "@utils/asset-utils";
+import Avatar from "@components/atoms/display/Avatar.svelte";
+import Card from "@components/atoms/display/Card.svelte";
+import I18nKey from "@i18n/i18nKey";
+import { i18n } from "@i18n/translation";
+import MainGridLayout from "@layouts/MainGridLayout.astro";
+import { profileConfig } from "@/config";
+
+interface Project {
+	title: string;
+	description: string;
+	url?: string;
+	repo?: string;
+}
+
+interface TechItem {
+	name: string;
+	category: string;
+	description: string;
+	icon?: string;
+	letter?: string;
+	color: string;
+	borderColor: string;
+}
+
+// 在此修改/添加你的项目
+const projects: Project[] = [
+	{ title: "待添加", description: "待添加", url: "#", repo: "#" },
+	{ title: "待添加", description: "待添加", url: "#", repo: "#" },
+	{ title: "待添加", description: "待添加", url: "#", repo: "#" },
+	{ title: "待添加", description: "待添加", url: "#", repo: "#" },
+	{ title: "待添加", description: "待添加", url: "#", repo: "#" },
+	{ title: "待添加", description: "待添加", url: "#", repo: "#" },
+];
+
+// 在此修改/添加你的技术栈
+const techStack: TechItem[] = [
+	{
+		name: "Astro",
+		category: "构建框架",
+		description: "Astro 是一个为构建快速、内容驱动的网站而优化的 JavaScript Web 框架。",
+		icon: "fa6-solid:rocket",
+		color: "bg-orange-500",
+		borderColor: "border-orange-500",
+	},
+	{
+		name: "Fuwari",
+		category: "博客主题",
+		description: "Fuwari 是一个基于 Astro 开发的静态博客模板。",
+		letter: "F",
+		color: "bg-purple-500",
+		borderColor: "border-purple-500",
+	},
+	{
+		name: "EdgeOne Pages",
+		category: "托管服务",
+		description: "EdgeOne Pages 是基于 Tencent EdgeOne 基础设施打造的前端开发和部署平台。",
+		icon: "fa6-solid:cloud",
+		color: "bg-blue-500",
+		borderColor: "border-blue-500",
+	},
+];
+
+const config = profileConfig;
+const avatarUrl = await resolveAsset(config.avatar ?? "");
+---
+
+<MainGridLayout title={i18n(I18nKey.about)} description={i18n(I18nKey.about)} page="about">
+	<div class="flex w-full rounded-[var(--radius-large)] overflow-hidden relative min-h-32">
+		<Card color="var(--card-bg)" radius="l" class="z-10 px-6 md:px-9 py-6 relative w-full flex flex-col gap-6">
+			<!-- ABOUT -->
+			<h2 class="text-6xl md:text-7xl font-black uppercase text-[var(--primary)] opacity-30 select-none tracking-widest text-center mb-0">
+				ABOUT
+			</h2>
+
+			<!-- 个人信息 -->
+			<section class="flex flex-col md:flex-row items-center md:items-start gap-4">
+				<div class="w-28 h-28 md:w-32 md:h-32 rounded-2xl overflow-hidden shrink-0 shadow-md border border-black/5 dark:border-white/10 transition-all duration-300 hover:shadow-xl hover:shadow-[var(--primary)]/25 hover:border-[var(--primary)]/30 hover:scale-[1.02]">
+					<Avatar
+						src={avatarUrl}
+						alt="Avatar"
+						size={128}
+						shape="rounded"
+						loading="eager"
+						class="w-full h-full"
+					/>
+				</div>
+				<div class="flex flex-col items-center md:items-start text-center md:text-left gap-2">
+					<div>
+						<h1 class="text-3xl md:text-4xl font-bold text-[var(--on-surface)] mb-1">
+							关于 {config.name}
+						</h1>
+						<p class="text-lg text-[var(--on-surface-variant)]">
+							{config.bio}
+						</p>
+					</div>
+					<div class="flex flex-wrap justify-center md:justify-start gap-2">
+						{config.links.map((link) => (
+							<a
+								href={link.url}
+								target="_blank"
+								rel="me"
+								class="inline-flex items-center gap-1.5 px-3 h-9 rounded-lg text-sm font-medium border border-[var(--outline-variant)] bg-[var(--surface)] text-[var(--on-surface)] hover:bg-[var(--surface-container)] active:scale-95 transition duration-200 hover:-translate-y-0.5 hover:shadow-sm"
+							>
+								<Icon name={link.icon} class="text-lg" />
+								<span>{link.name}</span>
+							</a>
+						))}
+					</div>
+				</div>
+			</section>
+
+			<!-- Projects -->
+			<section>
+				<h2 class="text-5xl md:text-6xl font-black uppercase text-[var(--primary)] opacity-30 select-none tracking-widest text-center mb-6">
+					PROJECTS
+				</h2>
+				<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+					{projects.map((project) => (
+						<div class="group">
+						<Card color="var(--card-bg)" radius="l" class="p-5 h-full flex flex-col gap-2 border border-[var(--outline-variant)] group-hover:shadow-lg group-hover:-translate-y-1 transition duration-200">
+							<div class="flex items-center justify-between gap-3">
+								<h3 class="text-lg font-bold text-[var(--on-surface)] truncate">
+									{project.title}
+								</h3>
+								<div class="flex items-center gap-1 text-[var(--on-surface-variant)] shrink-0">
+									{project.url && (
+										<a
+											href={project.url}
+											target="_blank"
+											class="w-8 h-8 rounded-lg flex items-center justify-center hover:bg-[var(--surface-container)] transition"
+											aria-label={`${project.title} 主页`}
+										>
+											<Icon name="fa6-solid:up-right-from-square" class="text-sm" />
+										</a>
+									)}
+									{project.repo && (
+										<a
+											href={project.repo}
+											target="_blank"
+											class="w-8 h-8 rounded-lg flex items-center justify-center hover:bg-[var(--surface-container)] transition"
+											aria-label={`${project.title} GitHub`}
+										>
+											<Icon name="fa6-brands:github" class="text-sm" />
+										</a>
+									)}
+								</div>
+							</div>
+							<p class="text-sm text-[var(--on-surface-variant)] leading-relaxed">
+								{project.description}
+							</p>
+						</Card>
+						</div>
+					))}
+				</div>
+			</section>
+
+			<!-- Tech Stack -->
+			<section>
+				<h2 class="text-5xl md:text-6xl font-black uppercase text-[var(--primary)] opacity-30 select-none tracking-widest text-center mb-6">
+					TECH STACK
+				</h2>
+				<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+					{techStack.map((tech) => (
+						<div class="group">
+						<Card color="var(--surface)" radius="l" class={`p-5 h-full flex flex-col gap-3 border-2 ${tech.borderColor} group-hover:shadow-lg group-hover:-translate-y-1 transition duration-200`}>
+							<div class="flex items-center gap-3">
+								<div class:list={[
+									"w-10 h-10 rounded-xl flex items-center justify-center text-white text-lg font-bold shrink-0 group-hover:rotate-[10deg] transition duration-300",
+									tech.color,
+								]}>
+									{tech.icon ? (
+										<Icon name={tech.icon} class="text-xl group-hover:-rotate-[10deg] transition duration-300" />
+									) : (
+										<span class="group-hover:-rotate-[10deg] transition duration-300">{tech.letter}</span>
+									)}
+								</div>
+								<div>
+									<h3 class="font-bold text-[var(--on-surface)]">{tech.name}</h3>
+									<p class="text-xs text-[var(--on-surface-variant)]">{tech.category}</p>
+								</div>
+							</div>
+							<p class="text-sm text-[var(--on-surface-variant)] leading-relaxed">
+								{tech.description}
+							</p>
+						</Card>
+						</div>
+					))}
+				</div>
+			</section>
+		</Card>
+	</div>
+</MainGridLayout>
