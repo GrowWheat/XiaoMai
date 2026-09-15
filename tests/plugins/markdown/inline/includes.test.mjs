@@ -34,13 +34,13 @@ test("supports inclusive line ranges and open bounds", () => {
 		"<!-- @include: src/content/snippets/include-example.md{2-4} -->";
 	const expanded = expandMarkdownIncludes(source);
 	assert.equal(expanded.included, true);
-	assert.match(expanded.source, /This paragraph/);
-	assert.doesNotMatch(expanded.source, /Included API/);
+	assert.match(expanded.source, /这段内容是从相邻的一篇 Markdown 文件展开而来的。/);
+	assert.doesNotMatch(expanded.source, /包含的 API/);
 
 	const open = expandMarkdownIncludes(
 		"<!-- @include: src/content/snippets/include-example.md{-2} -->",
 	);
-	assert.match(open.source, /Included API/);
+	assert.match(open.source, /包含的 API/);
 });
 
 test("keeps fenced, invalid, missing, and recursive includes literal", () => {
