@@ -20,12 +20,12 @@ export const profileConfig: ProfileConfig = withUserConfig("profile", {
 		{
 			name: "Bilibili",
 			icon: "fa6-brands:bilibili",
-			url: "https://space.bilibili.com/",
+			url: "https://space.bilibili.com/1182196267",
 		},
 		{
 			name: "Email",
 			icon: "fa6-regular:envelope",
-			url: "mailto:yufuguang@qalink.cn",
+			url: "mailto:3205894053@qq.com",
 		},
 		{
 			name: "爱发电",
