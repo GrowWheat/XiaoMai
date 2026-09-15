@@ -2,6 +2,7 @@
 title: Markdown 字段卡片
 description: API 与组件参数说明卡片。
 published: 2026-08-30
+category: 指南
 draft: true
 ---
 
