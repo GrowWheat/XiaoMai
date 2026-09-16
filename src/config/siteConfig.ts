@@ -10,7 +10,7 @@ import { withUserConfig } from "../utils/config-overlay.ts";
  * 类型见 src/types/config.ts。
  */
 export const siteConfig: SiteConfig = withUserConfig("site", {
-	site: " http://localhost:4321/",
+	site: " https://xiaomai.l.cd/",
 	base: "/",
 	title: "XiaoMai",
 	subtitle: "博客",
