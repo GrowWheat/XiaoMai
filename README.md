@@ -8,7 +8,7 @@ XiaoMai（中文名「小麦」）是一套现代静态博客主题：以 Materi
 ![pnpm 9](https://img.shields.io/badge/pnpm-9-F69220?logo=pnpm&logoColor=white)
 ![Astro 7](https://img.shields.io/badge/Astro-7-BC52EE?logo=astro&logoColor=white)
 [![License: MIT](https://img.shields.io/badge/License-MIT-3DA639.svg)](./LICENSE)
-https://xiaomai.l.cd/
+[在线预览](https://xiaomai.l.cd/)
 </div>
 
 > 
