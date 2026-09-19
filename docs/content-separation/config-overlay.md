@@ -86,7 +86,7 @@ customSections:
     description: 作者维护的开源项目
     items:
       - title: XiaoMai
-        url: https://github.com/LyraVoid/XiaoMai
+        url: https://github.com/GrowWheat/XiaoMai
         description: Astro 的 M3E 博客主题
 ```
 
