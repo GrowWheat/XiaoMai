@@ -835,7 +835,7 @@
 				{
 					"kind": "leaf-directive",
 					"pattern": "::github{repo=\"owner/repo\"}",
-					"example": "::github{repo=\"LyraVoid/XiaoMai\"}"
+					"example": "::github{repo=\"GrowWheat/XiaoMai\"}"
 				}
 			],
 			"attributes": [
