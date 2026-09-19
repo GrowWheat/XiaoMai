@@ -3,7 +3,9 @@
 > 一个基于 **Material 3 Expressive**、**Astro 7** 与 **Svelte 5** 构建的、富有表现力与二次元气质的静态博客主题。
 
 XiaoMai（中文名「小麦」）是一套现代静态博客主题：以 Material 3 Expressive 设计语言统一视觉，配合 Svelte 5 的细粒度交互、Swup 的无刷新页面转场，以及一套开箱即用的 Markdown 写作增强（提示块、Mermaid、KaTeX、代码块、视频、灯箱、加密文章等）。主题采用「代码仓 / 内容仓」双仓分离的架构，便于协作与备份。
+
 [在线预览](https://xiaomai.l.cd/)
+
 ![Node.js >= 22.12](https://img.shields.io/badge/Node.js-%3E%3D22.12-5FA04E?logo=nodedotjs&logoColor=white)
 ![pnpm 9](https://img.shields.io/badge/pnpm-9-F69220?logo=pnpm&logoColor=white)
 ![Astro 7](https://img.shields.io/badge/Astro-7-BC52EE?logo=astro&logoColor=white)
