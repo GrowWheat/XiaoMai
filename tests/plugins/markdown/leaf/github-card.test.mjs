@@ -11,12 +11,12 @@ async function render(markdown) {
 }
 
 test("renders a validated GitHub repository card with an SSR link", async () => {
-	const html = await render('::github{repo="LyraVoid/XiaoMai"}');
+	const html = await render('::github{repo="GrowWheat/XiaoMai"}');
 
 	assert.match(html, /<a[^>]+class="card-github fetch-waiting m3-state-layer not-prose"/);
 	assert.match(html, /data-github-card=""/);
-	assert.match(html, /data-github-repo="LyraVoid\/XiaoMai"/);
-	assert.match(html, /href="https:\/\/github.com\/LyraVoid\/XiaoMai"/);
+	assert.match(html, /data-github-repo="GrowWheat\/XiaoMai"/);
+	assert.match(html, /href="https:\/\/github.com\/GrowWheat\/XiaoMai"/);
 	assert.match(html, /rel="noopener noreferrer"/);
 });
 
