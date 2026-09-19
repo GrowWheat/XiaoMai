@@ -4,6 +4,8 @@
 
 XiaoMai (Chinese: 小麦, "wheat") is a modern static blog theme: it unifies visuals with the Material 3 Expressive design language, pairs Svelte 5's fine-grained reactivity with Swup's无缝 page transitions, and ships a ready-to-use set of Markdown authoring enhancements (admonitions, Mermaid, KaTeX, code blocks, video, lightbox, encrypted posts, and more). The theme uses a split **code repo (theme) + content repo (posts / data / assets)** architecture for easier collaboration and backups.
 
+[在线预览](https://xiaomai.l.cd/)
+
 ![Node.js >= 22.12](https://img.shields.io/badge/Node.js-%3E%3D22.12-5FA04E?logo=nodedotjs&logoColor=white)
 ![pnpm 9](https://img.shields.io/badge/pnpm-9-F69220?logo=pnpm&logoColor=white)
 ![Astro 7](https://img.shields.io/badge/Astro-7-BC52EE?logo=astro&logoColor=white)
