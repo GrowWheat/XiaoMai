@@ -11,12 +11,15 @@
  *   + supporting（body-medium）+ 可选 action（primary, label-large）
  * 方向：placement="bottom"（默认，向下弹出）/ "top"（向上弹出，
  * 用于卡片底部等下方空间不足的锚点，如音乐播放器控制栏与资料卡社交图标）。
+ * 配色：tone="inverse"（默认，深色反色气泡，用于深色/彩色底）/ "surface"
+ *   （浅色卡片气泡：surface 背景 + on-surface 文字 + outline-variant 细边框，用于浅色页面）。
  * 当视口边界空间不足时自动翻转与内缩（边界碰撞保护）。
  */
 import { onMount, tick } from "svelte";
 
 let {
 	variant = "plain",
+	tone = "inverse",
 	label = "",
 	title = "",
 	supporting = "",
@@ -26,6 +29,8 @@ let {
 	children,
 }: {
 	variant?: "plain" | "rich";
+	/** 配色：inverse（默认，深色反色气泡）/ surface（浅色卡片气泡，白色底） */
+	tone?: "inverse" | "surface";
 	label?: string;
 	title?: string;
 	supporting?: string;
@@ -212,7 +217,7 @@ $effect(() => {
 </span>
 
 <span
-	class={`m3-tooltip__tip m3-tooltip__tip--${variant}${open ? " m3-tooltip__tip--open" : ""}${actualPlacement === "top" ? " m3-tooltip__tip--top" : " m3-tooltip__tip--bottom"}`}
+	class={`m3-tooltip__tip m3-tooltip__tip--${variant} m3-tooltip__tip--${tone}${open ? " m3-tooltip__tip--open" : ""}${actualPlacement === "top" ? " m3-tooltip__tip--top" : " m3-tooltip__tip--bottom"}`}
 	id={tipId}
 	role="tooltip"
 	aria-hidden={!open}
@@ -265,6 +270,11 @@ $effect(() => {
 	&--open
 		opacity: 1
 		transform: scale(1)
+
+	&--surface
+		background: var(--surface)
+		color: var(--on-surface)
+		border: 1px solid var(--outline-variant)
 
 	&--rich
 		display: flex
