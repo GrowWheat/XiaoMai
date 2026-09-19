@@ -459,7 +459,7 @@ test.describe("Markdown syntax runtime loading", () => {
 	}) => {
 		const githubApiRequests = trackGitHubApiRequests(page);
 		await page.route(
-			"https://api.github.com/repos/LyraVoid/XiaoMai",
+			"https://api.github.com/repos/GrowWheat/XiaoMai",
 			async (route) => {
 				await new Promise((resolve) => setTimeout(resolve, 250));
 				await route.fulfill({
@@ -476,7 +476,7 @@ test.describe("Markdown syntax runtime loading", () => {
 		await expect(card).toBeVisible();
 		await expect(card).toHaveAttribute(
 			"href",
-			"https://github.com/LyraVoid/XiaoMai",
+			"https://github.com/GrowWheat/XiaoMai",
 		);
 		await expect(card).toHaveAttribute("rel", "noopener noreferrer");
 		await expect(card).toHaveCSS("display", "block");
@@ -512,7 +512,7 @@ test.describe("Markdown syntax runtime loading", () => {
 			GITHUB_REPOSITORY_MOCK.owner.avatar_url,
 		);
 		expect(githubApiRequests).toEqual([
-			"https://api.github.com/repos/LyraVoid/XiaoMai",
+			"https://api.github.com/repos/GrowWheat/XiaoMai",
 		]);
 
 		await page.goto(PLAIN_POST_PATH, { waitUntil: "networkidle" });
@@ -527,15 +527,15 @@ test.describe("Markdown syntax runtime loading", () => {
 		await expect(card.locator("script")).toHaveCount(0);
 		await expect(card).toHaveAttribute("data-github-state", "ready");
 		expect(githubApiRequests).toEqual([
-			"https://api.github.com/repos/LyraVoid/XiaoMai",
-			"https://api.github.com/repos/LyraVoid/XiaoMai",
+			"https://api.github.com/repos/GrowWheat/XiaoMai",
+			"https://api.github.com/repos/GrowWheat/XiaoMai",
 		]);
 	});
 
 	test("keeps the SSR fallback when GitHub API returns an error", async ({
 		page,
 	}) => {
-		await page.route("https://api.github.com/repos/LyraVoid/XiaoMai", (route) =>
+		await page.route("https://api.github.com/repos/GrowWheat/XiaoMai", (route) =>
 			route.fulfill({
 				status: 503,
 				contentType: "application/json",
@@ -549,7 +549,7 @@ test.describe("Markdown syntax runtime loading", () => {
 		await expect(card).toHaveClass(/\bfetch-error\b/);
 		await expect(card).toHaveAttribute(
 			"href",
-			"https://github.com/LyraVoid/XiaoMai",
+			"https://github.com/GrowWheat/XiaoMai",
 		);
 		await expect(card.locator("[data-github-description]")).toBeHidden();
 		await expect(card.locator("[data-github-info]")).toBeHidden();
@@ -561,7 +561,7 @@ test.describe("Markdown syntax runtime loading", () => {
 		page,
 	}) => {
 		await page.route(
-			"https://api.github.com/repos/LyraVoid/XiaoMai",
+			"https://api.github.com/repos/GrowWheat/XiaoMai",
 			async (route) => {
 				await new Promise((resolve) => setTimeout(resolve, 10_250));
 				try {
