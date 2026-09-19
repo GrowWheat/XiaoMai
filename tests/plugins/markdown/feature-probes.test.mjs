@@ -167,13 +167,13 @@ test("records defined content annotations after reference resolution", async () 
 });
 
 test("renders legacy GitHub cards with an SSR fallback for API enhancement", async () => {
-	const result = await renderer.render('::github{repo="LyraVoid/XiaoMai"}');
+	const result = await renderer.render('::github{repo="GrowWheat/XiaoMai"}');
 
 	assert.deepEqual(result.metadata.frontmatter.markdownSyntaxes, {
 		schema: 1,
 		syntaxes: ["github-card"],
 	});
-	assert.match(result.code, /href="https:\/\/github\.com\/LyraVoid\/XiaoMai"/);
+	assert.match(result.code, /href="https:\/\/github\.com\/GrowWheat\/XiaoMai"/);
 	assert.match(result.code, /rel="noopener noreferrer"/);
 	assert.match(result.code, /data-github-card/);
 	assert.match(result.code, /data-github-description/);
