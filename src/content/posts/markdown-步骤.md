@@ -21,7 +21,7 @@ draft: false
    Clone the repository and enter the project directory.
 
    ```powershell
-   git clone https://github.com/LyraVoid/XiaoMai.git
+   git clone https://github.com/GrowWheat/XiaoMai.git
    Set-Location XiaoMai
    ```
 
@@ -58,7 +58,7 @@ draft: false
    克隆仓库并进入项目目录。
 
    ```powershell
-   git clone https://github.com/LyraVoid/XiaoMai.git
+   git clone https://github.com/GrowWheat/XiaoMai.git
    Set-Location XiaoMai
    ```
 
