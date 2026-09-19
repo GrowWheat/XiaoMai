@@ -3,6 +3,7 @@ import { Icon } from "astro-icon/components";
 import { resolveAsset } from "@utils/asset-utils";
 import Avatar from "@components/atoms/display/Avatar.svelte";
 import Card from "@components/atoms/display/Card.svelte";
+import Tooltip from "@components/atoms/overlay/Tooltip.svelte";
 import I18nKey from "@i18n/i18nKey";
 import { i18n } from "@i18n/translation";
 import MainGridLayout from "@layouts/MainGridLayout.astro";
@@ -27,8 +28,8 @@ interface TechItem {
 
 // 在此修改/添加你的项目
 const projects: Project[] = [
-	{ title: "XiaoMai", description: "一个基于 Material 3 Expressive、Astro 7 与 Svelte 5 构建的、富有表现力与二次元气质的静态博客主题。", url: "#", repo: "https://github.com/GrowWheat/XiaoMai" },
-	{ title: "XiaoMai-Content", description: "这是 XiaoMai 博客主题的官方内容模板仓库，用于内容与代码分离的双仓管理模式。", url: "#", repo: "https://github.com/GrowWheat/XiaoMai-Content" },
+	{ title: "XiaoMai", description: "一个基于 Material 3 Expressive、Astro 7 与 Svelte 5 构建的、富有表现力的静态博客主题。", url: "https://xiaomai.l.cd", repo: "https://github.com/GrowWheat/XiaoMai" },
+	{ title: "待添加", description: "待添加", url: "#", repo: "#" },
 	{ title: "待添加", description: "待添加", url: "#", repo: "#" },
 	{ title: "待添加", description: "待添加", url: "#", repo: "#" },
 ];
@@ -125,24 +126,30 @@ const avatarUrl = await resolveAsset(config.avatar ?? "");
 								</h3>
 								<div class="flex items-center gap-1 text-[var(--on-surface-variant)] shrink-0">
 									{project.url && (
-										<a
-											href={project.url}
-											target="_blank"
-											class="w-8 h-8 rounded-lg flex items-center justify-center hover:bg-[var(--surface-container)] transition"
-											aria-label={`${project.title} 主页`}
-										>
-											<Icon name="fa6-solid:up-right-from-square" class="text-sm" />
-										</a>
+										<Tooltip label="访问网站" placement="bottom" tone="surface" client:load>
+											<a
+												href={project.url}
+												target="_blank"
+												rel="noopener noreferrer"
+												class="w-8 h-8 rounded-lg flex items-center justify-center hover:bg-[var(--surface-container)] transition"
+												aria-label={`${project.title} 主页`}
+											>
+												<Icon name="fa6-solid:up-right-from-square" class="text-sm" />
+											</a>
+										</Tooltip>
 									)}
 									{project.repo && (
-										<a
-											href={project.repo}
-											target="_blank"
-											class="w-8 h-8 rounded-lg flex items-center justify-center hover:bg-[var(--surface-container)] transition"
-											aria-label={`${project.title} GitHub`}
-										>
-											<Icon name="fa6-brands:github" class="text-sm" />
-										</a>
+										<Tooltip label="GitHub仓库" placement="bottom" tone="surface" client:load>
+											<a
+												href={project.repo}
+												target="_blank"
+												rel="noopener noreferrer"
+												class="w-8 h-8 rounded-lg flex items-center justify-center hover:bg-[var(--surface-container)] transition"
+												aria-label={`${project.title} GitHub`}
+											>
+												<Icon name="fa6-brands:github" class="text-sm" />
+											</a>
+										</Tooltip>
 									)}
 								</div>
 							</div>
