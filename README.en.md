@@ -145,7 +145,7 @@ XiaoMai separates the **code repo (theme)** from the **content repo (posts / dat
   "schemaVersion": 1,
   "source": {
     "type": "git",
-    "url": "https://github.com/OWNER/xiaomai-content.git",
+    "url": "https://github.com/GrowWheat/xiaomai-content.git",
     "ref": "main"
   },
   "mounts": {
