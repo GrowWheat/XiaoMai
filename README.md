@@ -144,7 +144,7 @@ XiaoMai 采用**代码仓（主题）＋ 内容仓（文章 / 数据 / 资源）
   "schemaVersion": 1,
   "source": {
     "type": "git",
-    "url": "https://github.com/OWNER/xiaomai-content.git",
+    "url": "https://github.com/GrowWheat/xiaomai-content.git",
     "ref": "main"
   },
   "mounts": {
