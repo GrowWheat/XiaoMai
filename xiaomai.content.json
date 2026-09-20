@@ -1,0 +1,8 @@
+{
+  "schemaVersion": 1,
+  "source": {
+    "type": "git",
+    "url": "https://github.com/GrowWheat/xiaomai-content.git",
+    "ref": "main"
+  }
+}
