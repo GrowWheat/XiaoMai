@@ -77,6 +77,7 @@ export const compassData: CompassShelf[] = [
 				label: "Excalidraw",
 				href: "https://excalidraw.com",
 				note: "手绘白板",
+				image: "/assets/images/Icon/Excalidraw.png"
 			},
 		],
 	},
@@ -104,7 +105,12 @@ export const compassData: CompassShelf[] = [
 		name: "Reading",
 		icon: "material-symbols:auto-stories-outline-rounded",
 		entries: [
-			{ label: "V2EX", href: "https://www.v2ex.com" },
+			{
+				label: "菜鸟教程", 
+				href: "https://www.runoob.com",
+				note: "编程技术基础学习",
+				image: "/assets/images/Icon/菜鸟.png",
+			},
 			{
 				label: "Solidot",
 				href: "https://www.solidot.org",
