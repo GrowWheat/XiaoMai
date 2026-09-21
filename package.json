@@ -120,9 +120,9 @@
     "yaml": "^2.9.0"
   },
   "devDependencies": {
-    "@astrojs/ts-plugin": "^1.10.11",
+    "@astrojs/ts-plugin": "^1.10.12",
     "@axe-core/playwright": "^4.13.0",
-    "@biomejs/biome": "2.5.10",
+    "@biomejs/biome": "2.5.14",
     "@iconify-json/simple-icons": "^1.2.93",
     "@lhci/cli": "0.15.1",
     "@playwright/test": "^1.62.1",
